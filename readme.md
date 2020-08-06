@@ -9,3 +9,16 @@ Full documentation at: https://www.sunsky-online.com/base/doc!view.do?code=opena
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/progressify/sunsky-python-api-service/graphs/commit-activity)
 [![Donate](https://img.shields.io/badge/PayPal-Donate%20to%20Author-blue.svg)](https://www.paypal.me/progressify) 
 [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://github.com/progressify/sunsky-python-api-service/issues)
+
+
+## Usage
+
+Create a file named `config.ini`
+
+```
+[SUNSKY]
+key = examplekey123@something
+secret = examplesecret123
+```
+
+Replace the sample data with your sunsky credential.
