@@ -1,7 +1,7 @@
 import json
 import unittest
 
-from api import OpenApiService
+from pysunsky import OpenApiService
 
 
 class TestApi(unittest.TestCase):
