@@ -5,6 +5,14 @@ from api import OpenApiService
 
 
 class TestApi(unittest.TestCase):
+    """
+    author: Antonio Porcelli
+    username: Progressify
+    github: https://github.com/progressify
+    ig: https://www.instagram.com/progressify/
+    site: https://progressify.dev
+    docs_link: https://www.sunsky-online.com/base/doc!view.do?code=openapi
+    """
 
     def setUp(self):
         self.oas = OpenApiService()
