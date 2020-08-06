@@ -10,8 +10,14 @@ class TestApi(unittest.TestCase):
         self.oas = OpenApiService()
 
     def test_download(self):
-        # TODO
-        pass
+        url_images = "http://www.sunsky-api.com/openapi/product!getImages.do"
+        path = './test_download/test.zip'
+        parameters = {
+            'itemNo': 'SAS8251B',
+            'size': '500',
+            'watermark': 'https://progressify.dev'
+        }
+        self.oas.download(url_images, parameters, path)
 
     def test_get_categories(self):
         """
