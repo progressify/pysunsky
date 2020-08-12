@@ -14,7 +14,7 @@ Full documentation at: https://www.sunsky-online.com/base/doc!view.do?code=opena
 
 ## Installation
 
-You can add in your requirements.txt:
+You can add in your `requirements.txt`:
 
 ```
 git+https://github.com/progressify/pysunsky
