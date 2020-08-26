@@ -17,10 +17,14 @@ Full documentation at: https://www.sunsky-online.com/base/doc!view.do?code=opena
 You can add in your `requirements.txt`:
 
 ```
-git+https://github.com/progressify/pysunsky
+pysunsky==1.0
 ```
 
-I will publish also on pip, follow me for updates :)
+or you can link the github:
+
+```
+git+https://github.com/progressify/pysunsky
+```
 
 
 ## Usage
