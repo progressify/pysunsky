@@ -21,7 +21,7 @@ class TestApi(unittest.TestCase):
         url_images = "http://www.sunsky-api.com/openapi/product!getImages.do"
         path = './test_download/test.zip'
         parameters = {
-            'itemNo': 'SAS8251B',
+            'itemNo': 'IP8G0963B',
             'size': '500',
             'watermark': 'https://progressify.dev'
         }
@@ -50,7 +50,7 @@ class TestApi(unittest.TestCase):
         Fetch the details for the product
         """
         url_product_detail = "http://www.sunsky-api.com/openapi/product!detail.do"
-        parameters = {'itemNo': 'SAS8251B', 'withLogo': 'true'}
+        parameters = {'itemNo': 'IP8G0963B', 'withLogo': 'true'}
         result = self.oas.call(url_product_detail, parameters)
         self.assertEqual(json.loads(result)['result'], 'success')
 
@@ -69,9 +69,9 @@ class TestApi(unittest.TestCase):
         url_product_detail = "http://www.sunsky-api.com/openapi/order!getPricesAndFreights.do"
         parameters = {
             'countryId': '41',
-            'items.1.itemNo': 'SAS8251B',
+            'items.1.itemNo': 'S-PC-7310',
             'items.1.qty': '20',
-            'items.2.itemNo': 'SAS8669W',
+            'items.2.itemNo': 'IP8G2615',
             'items.2.qty': '5'
         }
         result = self.oas.call(url_product_detail, parameters)
