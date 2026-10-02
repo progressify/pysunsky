@@ -11,7 +11,7 @@ class OpenApiService:
     github: https://github.com/progressify
     ig: https://www.instagram.com/progressify/
     site: https://progressify.dev
-    docs_link: https://www.sunsky-online.com/base/doc!view.do?code=openapi
+    docs_link: https://doc.sunsky-online.com/
     """
 
     def __init__(self, config_path='./'):

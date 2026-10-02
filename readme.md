@@ -4,7 +4,7 @@
 
 Simple SDK for use the Open API's of sunsky-online.com
 
-Full documentation at: https://www.sunsky-online.com/base/doc!view.do?code=openapi
+Full documentation at: https://doc.sunsky-online.com/
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/progressify/sunsky-python-api-service/graphs/commit-activity)
 [![Paypal Donate](https://img.shields.io/badge/PayPal-Donate%20to%20Author-blue.svg)](https://www.paypal.me/progressify) 
@@ -17,42 +17,71 @@ Full documentation at: https://www.sunsky-online.com/base/doc!view.do?code=opena
 You can add in your `requirements.txt`:
 
 ```
-pysunsky==1.0
+pysunsky
 ```
 
-or you can link the github:
+or install from PyPI:
+
+```bash
+pip install pysunsky
+```
+
+or directly from GitHub:
 
 ```
-git+https://github.com/progressify/pysunsky
+pip installgit+https://github.com/progressify/pysunsky
 ```
 
 
 ## Usage
 
-Create a file named `config.ini`
+Create a file named `config.ini`:
 
-```
+```ini
 [SUNSKY]
 key = examplekey123@something
 secret = examplesecret123
 ```
 
-Replace the sample data with your sunsky credential.
+Replace the sample data with your Sunsky credentials.
 
-If the `config.ini` file is located in the same directory of your script you can call the class directly:
+### API Call
 
-```
+If the `config.ini` file is located in the same directory as your script, you can initialize and call the service directly:
+
+```python
+from pysunsky import OpenApiService
+
 open_api_service = OpenApiService()
-url_products = "http://www.sunsky-api.com/openapi/product!search.do"
+url_products = "https://www.sunsky-api.com/openapi/product!search.do"
 parameters = {'gmtModifiedStart': '10/31/2012'}
 result = open_api_service.call(url_products, parameters)
 ```
 
-Otherwise you can specify a custom (relative or absolute) path:
+Otherwise, you can specify a custom (relative or absolute) path to the configuration directory:
 
-```
+```python
+from pysunsky import OpenApiService
+
 open_api_service = OpenApiService(config_path='./path-of-your-config-file/')
-url_products = "http://www.sunsky-api.com/openapi/product!search.do"
+url_products = "https://www.sunsky-api.com/openapi/product!search.do"
 parameters = {'gmtModifiedStart': '10/31/2012'}
 result = open_api_service.call(url_products, parameters)
+```
+
+### Download Product Images
+
+You can download product images directly into a zip file:
+
+```python
+from pysunsky import OpenApiService
+
+open_api_service = OpenApiService()
+url_images = "https://www.sunsky-api.com/openapi/product!getImages.do"
+parameters = {
+    'itemNo': 'IP8G0963B',
+    'size': '500',
+    'watermark': 'https://progressify.dev'
+}
+open_api_service.download(url_images, parameters, './product_images.zip')
 ```
